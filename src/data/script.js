@@ -1,3 +1,4 @@
+const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 const movies = [
   {
@@ -5,7 +6,7 @@ const movies = [
     name: "Spider Men",
     rate:0,
     description: "Film Studies1",
-    pic: "/src/data/SPIDERMEN.jpg",
+    pic: img('SPIDERMEN.jpeg'),
     countClicks : 0,
     totalRate : 0,
   },
@@ -14,7 +15,7 @@ const movies = [
     name: "X Men",
     rate: 0,
     description: "Film Studies2",
-    pic: "/src/data/XMEN.jpeg",
+    pic: img('XMEN.jpeg'),
     countClicks : 0,
     totalRate : 0,
   },
@@ -23,7 +24,7 @@ const movies = [
     name: "Harry Potter",
     rate: 0,
     description: "Film Studies3",
-    pic: "/src/data/HARRY.jpeg",
+    pic: img('HARRY.jpeg'),
     countClicks : 0,
     totalRate : 0,
   },
@@ -32,7 +33,7 @@ const movies = [
     name: "Snow White",
     rate: 0,
     description: "fgfg",
-    pic: "/src/data/SNOW.jpeg",
+    pic: img('SNOW.jpeg'),
     countClicks : 0,
     totalRate : 0,
   },
@@ -41,7 +42,7 @@ const movies = [
     name: "Jango",
     rate: 0,
     description: "",
-    pic: "/src/data/JANGO.jpeg",
+    pic: img('JANGO.jpeg'),
     countClicks : 0,
     totalRate : 0,
   },  
