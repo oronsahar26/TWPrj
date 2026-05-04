@@ -1,16 +1,34 @@
-import React from 'react'
+import {AppContext} from './AppContext.jsx'
 
-function Allmovies() {
+import React, { useContext } from 'react'; 
+
+
+function Allmovies({filteredMoviesByName}) {
+
+  const {setMovieDetails} = useContext(AppContext);
+
   return (
     <div>         
-          <p class='text-black-600 p-2 bg-gray-400'>AllMovies</p>
+          <p className='text-black-600 p-2 bg-gray-400'>AllMovies</p>
+          
           <div>
-              <div class='border-b-4 text-black font-bold w-25 h-20 bg-blue-400 p-2'>movie 1</div>
-              <div class='border-b-4 text-black font-bold w-25 h-20 bg-blue-400 p-2'>movie 2</div>
-              <div class='border-b-4 text-black font-bold w-25 h-20 bg-blue-400 p-2'>movie 3</div>
-              <div class='border-b-4 text-black font-bold w-25 h-20 bg-blue-400 p-2'>movie 4</div>
-              <div class='border-b-4 text-black font-bold w-25 h-20 bg-blue-400 p-2'>movie 5</div>              
-          </div>           
+            
+
+             {filteredMoviesByName?.slice(0,5).map((item) => (
+
+             <div key = {item.id}  onClick={()=>setMovieDetails(item)} className='relative border-b-4 border-gray-200 w-25 h-20 overflow-hidden flex items-center justify-center cursor-pointer'>
+                <img src = {item.pic} alt = "Image of the movie" className = "absolute inset-0 w-full h-full object-cover" ></img>
+                <div className='absolute inset-0 bg-black/35'></div>
+                <span className='relative z-10 text-white font-bold text-center px-1'>{item.name}</span>
+              </div>
+
+
+              ))} 
+        
+
+
+
+          </div>            
     </div>
   )
 }
